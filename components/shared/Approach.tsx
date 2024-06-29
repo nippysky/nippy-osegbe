@@ -7,7 +7,7 @@ import { TextGenerateEffect } from "../TextGenerateEffect";
 
 export default function Approach() {
   return (
-    <section className="w-full mt-20 mb-10">
+    <section className="w-full min-h-screen flex flex-col justify-center">
       <TextGenerateEffect
         words="My approach"
         className="text-center text-[35px] md:text-4xl lg:text-5xl"

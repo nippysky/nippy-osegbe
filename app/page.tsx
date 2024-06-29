@@ -1,19 +1,48 @@
+export const revalidate = 0;
+
 import Approach from "@/components/shared/Approach";
-import Footer from "@/components/shared/Footer";
-import Header from "@/components/shared/Header";
 import Hero from "@/components/shared/Hero";
 import RecentProjects from "@/components/shared/RecentProjects";
-import Testimonials from "@/components/shared/Testimonials";
+import TechStacks from "@/components/shared/TechStacks";
+import { client } from "@/lib/sanity";
+import { ProjectProp } from "@/lib/types";
 
-export default function Home() {
+// Fetch Projects
+async function getProjects() {
+  const query = `*[_type == "projects"]{
+  _id,
+  name,
+  desc,
+  category,
+  "image": image.asset->url,
+  link
+}`;
+
+  const data = await client.fetch(query);
+  return data;
+}
+
+// Fetch About
+async function getAbout() {
+  const query = `*[_type == "about"]{
+  cv,
+  heroDesc
+}`;
+
+  const data = await client.fetch(query);
+  return data;
+}
+
+export default async function Home() {
+  const about = await getAbout();
+  const projects: ProjectProp[] = await getProjects();
+
   return (
-    <main className="w-full py-5 lg:px-32 px-5">
-      <Header />
-      <Hero />
+    <>
+      <Hero details={about[0]} />
+      <RecentProjects latestProjects={projects.slice(0, 3)} />
+      <TechStacks />
       <Approach />
-      <RecentProjects />
-      <Testimonials />
-      <Footer />
-    </main>
+    </>
   );
 }

@@ -1,22 +1,28 @@
 import Grid from "./assets/grid.svg";
-import POne from "./assets/p1.svg";
-import PTwo from "./assets/p2.svg";
-import PThree from "./assets/p3.svg";
-import PFour from "./assets/p4.svg";
 import PBG from "./assets/bg.png";
 
 import LOGO from "./assets/NIPPYSKY-LOGO.svg";
 
+import Typescript from "./assets/Typescript.svg";
+import Javascript from "./assets/Javascript.svg";
+import NextJS from "./assets/NextJS.svg";
+import React from "./assets/React.svg";
+import Solidity from "./assets/Solidity.svg";
+import TailwindCSS from "./assets/TailwindCSS.svg";
+import Figma from "./assets/Figma.svg";
+
 export const IMAGES = {
   grid: Grid,
   projectBG: PBG,
-
   logo: LOGO,
 };
 
-export const PROJECT_IMAGES = {
-  p1: POne,
-  p2: PTwo,
-  p3: PThree,
-  p4: PFour,
+export const STACK_IMAGES = {
+  typescript: Typescript,
+  javascript: Javascript,
+  nextjs: NextJS,
+  react: React,
+  solidity: Solidity,
+  tailwind: TailwindCSS,
+  figma: Figma,
 };

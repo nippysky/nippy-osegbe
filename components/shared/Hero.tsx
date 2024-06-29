@@ -7,10 +7,13 @@ import { TextGenerateEffect } from "../TextGenerateEffect";
 import NippyButton from "../NippyButton";
 import { IMAGES } from "@/public";
 import Image from "next/image";
-import { Button } from "../ui/button";
 import { MoveRight } from "lucide-react";
 
-export default function Hero() {
+export default function Hero({
+  details,
+}: {
+  details: { heroDesc: string; cv: string };
+}) {
   return (
     <div className="lg:pb-20 relative">
       {/* background grid */}
@@ -37,12 +40,11 @@ export default function Hero() {
           />
 
           <p className="text-center md:tracking-wider text-sm md:text-lg lg:text-xl lg:px-24">
-            Hi! I&apos;m Chukwudubem Osegbe, a Software Developer with
-            experience in Cloud Computing and Linux Administration.
+            {details.heroDesc}
           </p>
 
           <div className=" mt-10 w-full flex flex-col md:flex-row justify-center items-center gap-5 px-5">
-            <Link href="#about">
+            <Link href="#recent-projects">
               <NippyButton
                 icon={<FaLocationArrow size={20} />}
                 title={"Show my work"}
@@ -50,7 +52,7 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="/"
+              href={details.cv}
               className="text-[0.85rem] items-center gap-2 flex justify-center font-semibold h-12 hover:text-primary"
             >
               <p>See my work experience</p>
