@@ -8,9 +8,11 @@ import { cn } from "@/lib/utils";
 export const TextGenerateEffect = ({
   words,
   className,
+  coloredIndexFromLastWord,
 }: {
   words: string;
   className?: string;
+  coloredIndexFromLastWord: number;
 }) => {
   const [scope, animate] = useAnimate();
   let wordsArray = words.split(" ");
@@ -36,7 +38,9 @@ export const TextGenerateEffect = ({
             <motion.span
               key={word + idx}
               className={` ${
-                idx > 3 ? "text-blue-700" : "dark:text-white text-black"
+                idx > wordsArray.length - coloredIndexFromLastWord
+                  ? "text-[#001489]"
+                  : "dark:text-white text-black"
               } opacity-0`}
             >
               {word}{" "}
