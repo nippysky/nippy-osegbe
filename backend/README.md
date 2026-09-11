@@ -1,9 +1,5 @@
-# Sanity Clean Content Studio
+# Portfolio Studio
 
-Congratulations, you have now installed the Sanity Content Studio, an open-source real-time content editing environment connected to the Sanity backend.
+The Sanity content editor for [osegbe.com](https://osegbe.com). It manages the profile, selected work, experience, education, CV and AI & Automation Lab presentation.
 
-Now you can do the following things:
-
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+Uses the `vuye8s8l` project and `production` dataset. See [development and maintenance](../docs/maintenance.md) for deployment, imports and GitHub synchronization.

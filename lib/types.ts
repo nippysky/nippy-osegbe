@@ -1,22 +1,23 @@
-import React from "react";
-
-export type ButtonProps = {
-  icon?: React.ReactNode;
+import content from '@/content/portfolio.json';
+export type SiteSettings = typeof content.settings;
+export type Profile = typeof content.profile;
+export type Work = (typeof content.work)[number];
+export type Experience = (typeof content.experience)[number];
+export type Education = (typeof content.education)[number];
+export type Portfolio = typeof content & { unavailable?: boolean };
+export type Lab = {
+  id: string;
   title: string;
+  summary: string;
+  url: string;
+  topics: string[];
+  language: string;
+  updatedAt: string | null;
+  kind: string;
+  featured: boolean;
+  learningNotes?: string;
+  image?: string;
+  imageAlt?: string;
+  order?: number;
 };
-
-export type TestimonyCardProps = {
-  _id?: string;
-  testimony: string;
-  name: string;
-  position: string;
-};
-
-export type ProjectProp = {
-  _id?: string;
-  image: string;
-  name: string;
-  desc: string;
-  category: string;
-  link: string;
-};
+export type LabFeed = { labs: Lab[]; unavailable: boolean };

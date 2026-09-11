@@ -1,0 +1,192 @@
+{
+  "settings": {
+    "name": "Chukwudubem Osegbe",
+    "shortName": "Osegbe",
+    "email": "nsinfo247@gmail.com",
+    "location": "Trollhättan, Sweden",
+    "github": "https://github.com/nippysky",
+    "linkedin": "https://www.linkedin.com/in/chukwudubem-osegbe/",
+    "company": "https://nippysky.com",
+    "cv": "/cv/chukwudubem-osegbe-cv.pdf"
+  },
+  "profile": {
+    "eyebrow": "Software & infrastructure engineer · Founder",
+    "headline": "Building products.\nEngineering systems.\nExploring AI & ML.",
+    "intro": "I'm Chukwudubem, founder of NIPPYSKY. I build web and mobile products, with experience supporting enterprise infrastructure. Now I'm taking that foundation into AI and machine learning.",
+    "currentFocus": "MSc in AI & Automation at University West. Building, experimenting, and learning in public.",
+    "availability": "Open to software engineering and AI/ML opportunities.",
+    "bio": "My work has always moved between building things and understanding how they run. From electrical and electronic engineering to software, enterprise infrastructure, and founding NIPPYSKY, I've kept following the problems that make me learn.\n\nI've built web and mobile products, worked with product and engineering teams, and supported business-critical Linux, Windows Server and VMware environments. That experience shapes how I think about reliability, user experience, and getting useful software into people's hands.\n\nToday, I'm based in Sweden and studying AI & Automation at University West. I'm developing my Python, machine learning and automation skills through coursework, experiments and projects. I'm looking for opportunities where I can contribute my software and systems experience while growing in AI/ML."
+  },
+  "work": [
+    {
+      "id": "aku",
+      "title": "Akù",
+      "category": "Venture / Personal finance",
+      "year": "2026",
+      "role": "Founder & product engineer",
+      "summary": "Personal finance, made personal.",
+      "contribution": "I built a mobile product for budgeting, bills and savings goals, bringing the product experience and engineering together through NIPPYSKY.",
+      "decision": "An offline-aware experience that keeps everyday money management close at hand.",
+      "tags": ["React Native", "TypeScript", "Product engineering"],
+      "url": "https://nippysky.com/ventures/aku",
+      "image": "/work/aku.png",
+      "imageAlt": "Akù mobile app bill-management interface",
+      "style": "aku",
+      "featured": true,
+      "order": 1
+    },
+    {
+      "id": "ugwo",
+      "title": "Ụgwọ",
+      "category": "Venture / Private ledger",
+      "year": "2026",
+      "role": "Founder & product engineer",
+      "summary": "A clearer record of what is owed.",
+      "contribution": "I built a private IOU and debt tracker, connecting a mobile interface with the backend and data layer.",
+      "decision": "Privacy and a straightforward ledger experience guide the product.",
+      "tags": ["React Native", "Node.js", "PostgreSQL"],
+      "url": "https://nippysky.com/ventures/ugwo",
+      "image": "/work/ugwo.png",
+      "imageAlt": "Ụgwọ mobile app ledger interface",
+      "style": "ugwo",
+      "featured": true,
+      "order": 2
+    },
+    {
+      "id": "citizen-monitors",
+      "title": "Citizen Monitors",
+      "category": "Client / Civic technology",
+      "year": "2026",
+      "role": "Mobile application developer",
+      "summary": "Tools for participation. Built for the field.",
+      "contribution": "I develop the mobile application, including onboarding, authentication, incident reporting and media-based evidence submission.",
+      "decision": "Resilient feedback and offline-aware behaviour support reporting workflows.",
+      "tags": ["React Native", "Expo", "API integration"],
+      "url": "https://nippysky.com/work/citizen-monitors",
+      "image": "/work/citizen-monitors.png",
+      "imageAlt": "Citizen Monitors project website",
+      "style": "citizen",
+      "featured": true,
+      "order": 3
+    },
+    {
+      "id": "marobi",
+      "title": "Marobi",
+      "category": "Client / Commerce",
+      "year": "2025",
+      "role": "Product designer & full-stack developer",
+      "summary": "A fashion brand, brought online.",
+      "contribution": "I built the commerce experience from product design and the storefront through catalogue, checkout and order-management flows.",
+      "decision": "The visual identity and mobile shopping journey were developed as one experience.",
+      "tags": ["Next.js", "Node.js", "PostgreSQL"],
+      "url": "https://nippysky.com/work/marobi",
+      "image": "/work/marobi.png",
+      "imageAlt": "Marobi fashion e-commerce storefront",
+      "style": "marobi",
+      "featured": true,
+      "order": 4
+    },
+    {
+      "id": "decentroneum",
+      "title": "Decentroneum",
+      "category": "Venture / Blockchain ecosystem",
+      "year": "2025",
+      "role": "Founder & full-stack engineer",
+      "summary": "An ecosystem, from interface to infrastructure.",
+      "contribution": "I built the web dApp, mobile wallet, smart contracts and supporting on-chain infrastructure through NIPPYSKY.",
+      "decision": "Connected interfaces and background services support the same ecosystem.",
+      "tags": ["TypeScript", "Smart contracts", "Infrastructure"],
+      "url": "https://nippysky.com/ventures/decentroneum",
+      "image": "",
+      "imageAlt": "",
+      "style": "decentroneum",
+      "featured": false,
+      "order": 5
+    },
+    {
+      "id": "yunite",
+      "title": "Yunite",
+      "category": "Client / Financial technology",
+      "year": "2024",
+      "role": "Mobile application developer",
+      "summary": "Banking, together.",
+      "contribution": "I developed cross-platform mobile interfaces and integrated APIs for a financial product designed around couples.",
+      "decision": "Reusable components kept product flows consistent across devices.",
+      "tags": ["React Native", "TypeScript", "API integration"],
+      "url": "https://nippysky.com/work/yunite",
+      "image": "",
+      "imageAlt": "",
+      "style": "yunite",
+      "featured": false,
+      "order": 6
+    }
+  ],
+  "experience": [
+    {
+      "id": "nippysky",
+      "company": "NIPPYSKY",
+      "role": "Founder & software engineer",
+      "period": "2024 — now",
+      "summary": "Building independent ventures and delivering web and mobile products, from design and architecture to implementation.",
+      "order": 1
+    },
+    {
+      "id": "citizen-monitors",
+      "company": "Citizen Monitors",
+      "role": "Mobile application developer · Contract",
+      "period": "2026 — now",
+      "summary": "Developing mobile workflows for civic participation, election monitoring and incident reporting.",
+      "order": 2
+    },
+    {
+      "id": "fidelity",
+      "company": "Fidelity Bank PLC",
+      "role": "Enterprise server administrator",
+      "period": "From May 2023",
+      "summary": "Supported business-critical RHEL, Windows Server and VMware environments, including patching, hardening, troubleshooting and disaster recovery.",
+      "order": 3
+    },
+    {
+      "id": "yunite",
+      "company": "Yunite",
+      "role": "Mobile application developer · Contract",
+      "period": "2023",
+      "summary": "Built reusable mobile interfaces and integrated backend APIs for a banking product for couples.",
+      "order": 4
+    },
+    {
+      "id": "subshare",
+      "company": "Subshare Inc.",
+      "role": "Lead frontend developer",
+      "period": "2022 — 2023",
+      "summary": "Led frontend delivery, developed reusable application structures, reviewed code and mentored junior developers.",
+      "order": 5
+    }
+  ],
+  "education": [
+    {
+      "id": "university-west",
+      "institution": "University West",
+      "qualification": "Master in AI & Automation",
+      "period": "2026 — 2027 · Ongoing",
+      "detail": "Trollhättan, Sweden · 60 ECTS",
+      "order": 1
+    },
+    {
+      "id": "valparaiso",
+      "institution": "Valparaiso University",
+      "qualification": "MSc, Information Technology",
+      "period": "2020 — 2022",
+      "detail": "Indiana, USA · GPA 4.0/4.0",
+      "order": 2
+    },
+    {
+      "id": "madonna",
+      "institution": "Madonna University",
+      "qualification": "B.Eng., Electrical/Electronic Engineering",
+      "period": "2013 — 2018",
+      "detail": "Nigeria",
+      "order": 3
+    }
+  ]
+}

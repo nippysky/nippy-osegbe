@@ -1,83 +1,91 @@
-export const revalidate = 0;
-
-import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import Testimonials from "@/components/shared/Testimonials";
-import { TestimonyCardProps } from "@/lib/types";
-import { client } from "@/lib/sanity";
-import Footer from "@/components/shared/Footer";
-import Header from "@/components/shared/Header";
-
-const FONT = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+import type { Metadata } from 'next';
+import { Space_Grotesk, Inter, IBM_Plex_Mono } from 'next/font/google';
+import './globals.css';
+import { ThemeProvider } from '@/components/theme-provider';
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
+import { getPortfolio } from '@/lib/content';
+import { draftMode } from 'next/headers';
+import {
+  SITE_URL,
+  SITE_NAME,
+  HOME_TITLE,
+  HOME_DESCRIPTION,
+  identityGraph,
+} from '@/lib/seo';
+import { StructuredData } from '@/components/structured-data';
+const display = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
 });
-
+const body = Inter({
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+});
+const mono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-mono',
+  display: 'swap',
+});
 export const metadata: Metadata = {
-  title: "Chukwudubem Osegbe - NIPPY The Creator",
-  description:
-    "Software Developer, Cloud & Server Administrator, Cybesecurity Enthusiat",
+  metadataBase: new URL(SITE_URL),
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  applicationName: SITE_NAME,
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/site.webmanifest',
 };
-
-// Fetch Testimonials
-async function getTestimonials() {
-  const query = `*[_type == "testimonials"] {
-    _id,
-    name,
-   testimony,
-    position,
-    }`;
-
-  const data = await client.fetch(query);
-  return data;
-}
-
 export default async function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-  const testimonials: TestimonyCardProps[] = await getTestimonials();
+}) {
+  const { settings, unavailable } = await getPortfolio();
+  const { isEnabled } = await draftMode();
 
   return (
-    <html lang="en" suppressHydrationWarning className={FONT.className}>
-      <head>
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${display.variable} ${body.variable} ${mono.variable}`}
+    >
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <main className="w-full py-5 lg:px-32 px-5">
-            <Header />
+        <ThemeProvider>
+          <a className="skip-link" href="#main">
+            Skip to content
+          </a>
+          {isEnabled && (
+            <div className="preview-banner">
+              Draft preview
+              <form action="/api/draft/disable" method="post">
+                <button>Exit preview</button>
+              </form>
+            </div>
+          )}
+          <Header cv={settings.cv} />
+          <main id="main">
+            {unavailable && (
+              <div className="content-notice shell" role="status">
+                Portfolio details are temporarily unavailable. Please try again
+                shortly or get in touch below.
+              </div>
+            )}
             {children}
-            <Testimonials testimonials={testimonials} />
-            <Footer />
           </main>
+          <Footer settings={settings} />
         </ThemeProvider>
+        <StructuredData data={identityGraph(settings)} />
       </body>
     </html>
   );

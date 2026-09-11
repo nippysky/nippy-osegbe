@@ -34,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local document backups and Studio output
+/backups/
+/backend/node_modules/
+/backend/dist/
+/backend/.sanity/
