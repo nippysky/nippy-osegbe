@@ -1252,25 +1252,6 @@ img {
     box-shadow: none;
   }
 }
-.preview-banner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 10px 20px;
-  background: var(--accent-soft);
-  color: var(--ink);
-  font-size: 13px;
-  border-bottom: 1px solid var(--line);
-}
-.preview-banner button {
-  background: none;
-  border: 0;
-  text-decoration: underline;
-  color: inherit;
-  min-height: 32px;
-}
-
 .content-notice {
   padding-block: 24px;
   color: var(--muted);

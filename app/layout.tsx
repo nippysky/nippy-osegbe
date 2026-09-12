@@ -5,7 +5,6 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { getPortfolio } from '@/lib/content';
-import { draftMode } from 'next/headers';
 import {
   SITE_URL,
   SITE_NAME,
@@ -52,7 +51,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const { settings, unavailable } = await getPortfolio();
-  const { isEnabled } = await draftMode();
 
   return (
     <html
@@ -65,14 +63,6 @@ export default async function RootLayout({
           <a className="skip-link" href="#main">
             Skip to content
           </a>
-          {isEnabled && (
-            <div className="preview-banner">
-              Draft preview
-              <form action="/api/draft/disable" method="post">
-                <button>Exit preview</button>
-              </form>
-            </div>
-          )}
           <Header cv={settings.cv} />
           <main id="main">
             {unavailable && (

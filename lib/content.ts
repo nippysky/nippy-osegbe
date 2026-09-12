@@ -3,7 +3,6 @@ import fallback from '@/content/portfolio.json';
 import { cache } from 'react';
 import { createClient } from '@sanity/client';
 import type { Portfolio } from './types';
-import { previewContext } from './preview';
 
 export const sanityClient = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'vuye8s8l',
@@ -15,11 +14,10 @@ export const sanityClient = createClient({
 
 export const getPortfolio = cache(async (): Promise<Portfolio> => {
   try {
-    const { client, preview } = await previewContext(sanityClient);
     // This explicit cutover is not inferred from a document editors can unpublish.
-    if (!preview && process.env.SANITY_CONTENT_READY !== 'true')
+    if (process.env.SANITY_CONTENT_READY !== 'true')
       return fallback;
-    const data = await client.fetch<Partial<Portfolio>>(
+    const data = await sanityClient.fetch<Partial<Portfolio>>(
       `{
       "settings": *[_id == "siteSettings"][0]{name,shortName,email,location,github,linkedin,company,"cv":coalesce(cv.asset->url,cvUrl)},
       "profile": *[_id == "profile"][0]{eyebrow,headline,intro,currentFocus,availability,bio},
@@ -28,9 +26,7 @@ export const getPortfolio = cache(async (): Promise<Portfolio> => {
       "education": *[_type == "education"] | order(order asc){"id":_id,institution,qualification,period,detail,order}
     }`,
       {},
-      preview
-        ? { cache: 'no-store' }
-        : { next: { revalidate: 300, tags: ['portfolio'] } },
+      { next: { revalidate: 300 } },
     );
     if (!data.profile || !data.settings)
       throw new Error('Required portfolio content unavailable');
@@ -50,7 +46,7 @@ export const getPortfolio = cache(async (): Promise<Portfolio> => {
         availability: data.profile.availability || '',
         bio: data.profile.bio || '',
       },
-      // Empty CMS collections remain empty, including during preview.
+      // Empty CMS collections remain empty.
       work: data.work || [],
       experience: data.experience || [],
       education: data.education || [],

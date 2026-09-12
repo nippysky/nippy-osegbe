@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { draftMode } from 'next/headers';
 import type { SiteSettings } from './types';
 import { socialPages, type SocialPage } from '@/content/social';
 
@@ -14,8 +13,7 @@ export async function pageMetadata(
   description: string,
   path: SocialPage,
 ): Promise<Metadata> {
-  const { isEnabled } = await draftMode();
-  const indexable = process.env.SITE_INDEXABLE === 'true' && !isEnabled;
+  const indexable = process.env.SITE_INDEXABLE === 'true';
   const imageUrl = `${SITE_URL}${path === '/' ? '' : path}/opengraph-image`;
   const fullTitle = path === '/' ? title : `${title} | ${SITE_NAME}`;
   return {

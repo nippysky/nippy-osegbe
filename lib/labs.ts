@@ -1,8 +1,6 @@
 import "server-only";
 import { sanityClient } from "./content";
-import { collectGithubLabs } from "@/scripts/lab-source.mjs";
 import type { LabFeed } from "./types";
-import { previewContext } from "./preview";
 
 type Source = {
   sourceId: string;
@@ -31,8 +29,7 @@ type Editorial = {
 };
 export async function getLabs(): Promise<LabFeed> {
   try {
-    const { client, preview } = await previewContext(sanityClient);
-    const data = await client.fetch<{
+    const data = await sanityClient.fetch<{
       synced: boolean;
       lastSuccess: string | null;
       sources: Source[];
@@ -45,38 +42,25 @@ export async function getLabs(): Promise<LabFeed> {
       "editorial": *[_type == "labEditorial"]{"sourceId":source->sourceId,title,summary,kind,hidden,featured,learningNotes,imageAlt,order,"image":image.asset->url}
     }`,
       {},
-      preview
-        ? { cache: "no-store" }
-        : { next: { revalidate: 300, tags: ["labs"] } },
+      { next: { revalidate: 300 } },
     );
-    let sources = data.sources || [];
-    // Live public discovery keeps the Lab useful before scheduled mirroring is configured.
-    if (!data.synced) {
-      sources = (await collectGithubLabs({
-        fetchImpl: (url, options) =>
-          fetch(url, {
-            ...options,
-            next: { revalidate: 3600, tags: ["labs"] },
-          }),
-      })) as Source[];
+    if (!data.synced || !data.lastSuccess) {
+      return { labs: [], unavailable: true };
     }
-    const stale =
-      data.synced &&
-      (!data.lastSuccess ||
-        Date.now() - Date.parse(data.lastSuccess) >= 86400000);
+    const lastSuccess = Date.parse(data.lastSuccess);
+    const stale = !Number.isFinite(lastSuccess) || Date.now() - lastSuccess >= 86400000;
     return {
       unavailable: stale,
-      labs: sources
+      labs: (stale ? [] : data.sources || [])
         .filter(
           (source) =>
-            !data.synced ||
             Date.now() - Date.parse(source.lastVerifiedAt) < 86400000,
         )
         .flatMap((source) => {
           const editorial = (data.editorial || []).find(
             (item) => item.sourceId === source.sourceId,
           );
-          if (editorial?.hidden || (data.synced && !editorial)) return [];
+          if (!editorial || editorial.hidden) return [];
           return [
             {
               id: source.sourceId,
