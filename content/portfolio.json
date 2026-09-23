@@ -2,8 +2,8 @@
   "settings": {
     "name": "Chukwudubem Osegbe",
     "shortName": "Osegbe",
-    "email": "nsinfo247@gmail.com",
-    "location": "Trollhättan, Sweden",
+    "email": "chukwudubem@osegbe.com",
+    "location": "Sweden",
     "github": "https://github.com/nippysky",
     "linkedin": "https://www.linkedin.com/in/chukwudubem-osegbe/",
     "company": "https://nippysky.com",
@@ -107,7 +107,7 @@
       "id": "yunite",
       "title": "Yunite",
       "category": "Client / Financial technology",
-      "year": "2024",
+      "year": "2023",
       "role": "Mobile application developer",
       "summary": "Banking, together.",
       "contribution": "I developed cross-platform mobile interfaces and integrated APIs for a financial product designed around couples.",
@@ -134,7 +134,7 @@
       "id": "citizen-monitors",
       "company": "Citizen Monitors",
       "role": "Mobile application developer · Contract",
-      "period": "2026 — now",
+      "period": "March 2026 — now",
       "summary": "Developing mobile workflows for civic participation, election monitoring and incident reporting.",
       "order": 2
     },
@@ -142,7 +142,7 @@
       "id": "fidelity",
       "company": "Fidelity Bank PLC",
       "role": "Enterprise server administrator",
-      "period": "From May 2023",
+      "period": "May 2023 — September 2026",
       "summary": "Supported business-critical RHEL, Windows Server and VMware environments, including patching, hardening, troubleshooting and disaster recovery.",
       "order": 3
     },
@@ -150,7 +150,7 @@
       "id": "yunite",
       "company": "Yunite",
       "role": "Mobile application developer · Contract",
-      "period": "2023",
+      "period": "March — October 2023",
       "summary": "Built reusable mobile interfaces and integrated backend APIs for a banking product for couples.",
       "order": 4
     },
@@ -158,7 +158,7 @@
       "id": "subshare",
       "company": "Subshare Inc.",
       "role": "Lead frontend developer",
-      "period": "2022 — 2023",
+      "period": "September 2022 — August 2023",
       "summary": "Led frontend delivery, developed reusable application structures, reviewed code and mentored junior developers.",
       "order": 5
     }
@@ -169,7 +169,7 @@
       "institution": "University West",
       "qualification": "Master in AI & Automation",
       "period": "2026 — 2027 · Ongoing",
-      "detail": "Trollhättan, Sweden · 60 ECTS",
+      "detail": "Sweden · 60 ECTS",
       "order": 1
     },
     {
