@@ -7,7 +7,7 @@
     "github": "https://github.com/nippysky",
     "linkedin": "https://www.linkedin.com/in/chukwudubem-osegbe/",
     "company": "https://nippysky.com",
-    "cv": "/cv/chukwudubem-osegbe-cv.pdf"
+    "cv": "/cv/General_CV_Chukwudubem_Osegbe.pdf"
   },
   "profile": {
     "eyebrow": "Software & infrastructure engineer · Founder",
@@ -59,7 +59,7 @@
       "year": "2026",
       "role": "Mobile application developer",
       "summary": "Tools for participation. Built for the field.",
-      "contribution": "I develop the mobile application, including onboarding, authentication, incident reporting and media-based evidence submission.",
+      "contribution": "I developed the mobile application, including onboarding, authentication, incident reporting and media-based evidence submission.",
       "decision": "Resilient feedback and offline-aware behaviour support reporting workflows.",
       "tags": ["React Native", "Expo", "API integration"],
       "url": "https://nippysky.com/work/citizen-monitors",
@@ -125,17 +125,17 @@
     {
       "id": "nippysky",
       "company": "NIPPYSKY",
-      "role": "Founder & software engineer",
+      "role": "Software engineer & founder",
       "period": "2024 — now",
-      "summary": "Building independent ventures and delivering web and mobile products, from design and architecture to implementation.",
+      "summary": "Designing, building, deploying and maintaining web and mobile products, covering architecture, backend services, infrastructure, security and production releases.",
       "order": 1
     },
     {
       "id": "citizen-monitors",
       "company": "Citizen Monitors",
       "role": "Mobile application developer · Contract",
-      "period": "March 2026 — now",
-      "summary": "Developing mobile workflows for civic participation, election monitoring and incident reporting.",
+      "period": "March — August 2026",
+      "summary": "Developed mobile workflows for civic participation, election monitoring and incident reporting.",
       "order": 2
     },
     {
