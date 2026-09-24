@@ -79,7 +79,7 @@ export const siteSettings = defineType({
       name: "cvUrl",
       title: "CV fallback URL",
       type: "string",
-      description: "Use /cv/chukwudubem-osegbe-cv.pdf for the included CV.",
+      description: "Use /cv/General_CV_Chukwudubem_Osegbe.pdf for the included CV.",
     }),
   ],
   preview: {
