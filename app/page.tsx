@@ -59,7 +59,7 @@ export default async function Home() {
           <span>
             PRODUCT THINKING. SYSTEMS EXPERIENCE. A GROWING AI PRACTICE.
           </span>
-          <a href="#selected-work" aria-label="Scroll to selected work">
+          <a href="#selected-work" aria-label="Scroll to projects">
             <ArrowDown size={19} />
           </a>
         </div>
@@ -67,13 +67,13 @@ export default async function Home() {
       <section id="selected-work" className="section shell">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">01 / SELECTED WORK</p>
+            <p className="eyebrow">01 / PROJECTS</p>
             <h2>
               Ideas, shipped into the world<span className="accent">.</span>
             </h2>
           </div>
           <Link className="text-link" href="/work">
-            Explore the work <ArrowUpRight size={18} />
+            Explore projects <ArrowUpRight size={18} />
           </Link>
         </div>
         <div className="work-grid">

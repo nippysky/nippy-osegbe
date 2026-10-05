@@ -5,7 +5,7 @@ import { WorkCard } from '@/components/work-card';
 export const revalidate = 300;
 export async function generateMetadata() {
   return pageMetadata(
-    'Selected work & ventures',
+    'Projects & ventures',
     'Web and mobile products built by Chukwudubem Osegbe. Explore my engineering contributions, with full venture and client case studies on NIPPYSKY.',
     '/work',
   );
@@ -15,7 +15,7 @@ export default async function WorkPage() {
   return (
     <>
       <div className="page-intro shell">
-        <p className="eyebrow">WORK / VENTURES & CLIENT PRODUCTS</p>
+        <p className="eyebrow">PROJECTS / VENTURES & CLIENT PRODUCTS</p>
         <h1>
           From an idea
           <br />
@@ -26,7 +26,7 @@ export default async function WorkPage() {
           in the work; the full stories live at NIPPYSKY.
         </p>
       </div>
-      <section className="section shell" aria-label="Selected work">
+      <section className="section shell" aria-label="Projects">
         <div className="work-grid">
           {work
             .filter((item) => item.image)

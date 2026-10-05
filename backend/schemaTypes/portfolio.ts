@@ -118,14 +118,15 @@ export const profile = defineType({
 });
 export const selectedWork = defineType({
   name: "selectedWork",
-  title: "Selected work",
+  title: "Projects",
   type: "document",
   fields: [
     requiredString("title", "Project name"),
     defineField({
       name: "slug",
-      title: "Stable identifier",
+      title: "Project identifier",
       type: "slug",
+      description: "Click Generate after entering the project name.",
       options: { source: "title" },
       validation: (r) => r.required(),
     }),
@@ -133,16 +134,27 @@ export const selectedWork = defineType({
     requiredString("year", "Project year"),
     requiredString("role", "Your role"),
     requiredString("summary", "Short introduction", 250),
-    text("contribution", "Your contribution"),
-    text("decision", "An engineering decision"),
+    {
+      ...text("contribution", "Your contribution"),
+      description: "Describe what you personally built or delivered. This appears on the Projects page.",
+    },
+    {
+      ...text("decision", "An engineering decision"),
+      description: "Optional: explain one technical choice and why it suited the project.",
+    },
     tags,
     url,
-    image,
+    {
+      ...image,
+      description: "Upload a project screenshot or cover. It fits automatically without cropping; no layout settings are needed.",
+    },
     imageAlt,
     defineField({
       name: "imageUrl",
       title: "Bundled image fallback",
       type: "string",
+      hidden: true,
+      readOnly: true,
       description:
         "For existing /work/ files or cdn.sanity.io images. Upload new images using the Image field above.",
       validation: (rule) =>
@@ -159,25 +171,29 @@ export const selectedWork = defineType({
     }),
     defineField({
       name: "style",
-      title: "Media presentation",
+      title: "Previous image style",
       type: "string",
-      options: {
-        list: ["aku", "ugwo", "citizen", "marobi", "decentroneum", "yunite"],
-      },
+      hidden: true,
+      readOnly: true,
     }),
     defineField({
       name: "featured",
       title: "Feature on homepage",
+      description: "The homepage shows up to four featured projects, with the lowest Display order numbers first.",
       type: "boolean",
       initialValue: false,
     }),
     defineField({
       name: "hidden",
       title: "Archive from portfolio",
+      description: "Turn on to hide this project from both the homepage and Projects page without deleting it.",
       type: "boolean",
       initialValue: false,
     }),
-    order,
+    {
+      ...order,
+      description: "Lower numbers appear first. Use 0 to place a new project ahead of projects numbered 1 or higher.",
+    },
   ],
   preview: { select: { title: "title", subtitle: "role", media: "image" } },
 });

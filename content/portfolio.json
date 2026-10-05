@@ -31,7 +31,6 @@
       "url": "https://nippysky.com/ventures/aku",
       "image": "/work/aku.png",
       "imageAlt": "Akù mobile app bill-management interface",
-      "style": "aku",
       "featured": true,
       "order": 1
     },
@@ -48,7 +47,6 @@
       "url": "https://nippysky.com/ventures/ugwo",
       "image": "/work/ugwo.png",
       "imageAlt": "Ụgwọ mobile app ledger interface",
-      "style": "ugwo",
       "featured": true,
       "order": 2
     },
@@ -65,7 +63,6 @@
       "url": "https://nippysky.com/work/citizen-monitors",
       "image": "/work/citizen-monitors.png",
       "imageAlt": "Citizen Monitors project website",
-      "style": "citizen",
       "featured": true,
       "order": 3
     },
@@ -82,7 +79,6 @@
       "url": "https://nippysky.com/work/marobi",
       "image": "/work/marobi.png",
       "imageAlt": "Marobi fashion e-commerce storefront",
-      "style": "marobi",
       "featured": true,
       "order": 4
     },
@@ -99,7 +95,6 @@
       "url": "https://nippysky.com/ventures/decentroneum",
       "image": "",
       "imageAlt": "",
-      "style": "decentroneum",
       "featured": false,
       "order": 5
     },
@@ -116,7 +111,6 @@
       "url": "https://nippysky.com/work/yunite",
       "image": "",
       "imageAlt": "",
-      "style": "yunite",
       "featured": false,
       "order": 6
     }

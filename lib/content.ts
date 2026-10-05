@@ -21,7 +21,7 @@ export const getPortfolio = cache(async (): Promise<Portfolio> => {
       `{
       "settings": *[_id == "siteSettings"][0]{name,shortName,email,location,github,linkedin,company,"cv":coalesce(cv.asset->url,cvUrl)},
       "profile": *[_id == "profile"][0]{eyebrow,headline,intro,currentFocus,availability,bio},
-      "work": *[_type == "selectedWork" && hidden != true] | order(order asc){"id":coalesce(slug.current,_id),title,category,year,role,summary,contribution,decision,tags,url,"image":coalesce(image.asset->url,imageUrl),imageAlt,style,featured,order},
+      "work": *[_type == "selectedWork" && hidden != true] | order(order asc){"id":coalesce(slug.current,_id),title,category,year,role,summary,contribution,decision,tags,url,"image":coalesce(image.asset->url,imageUrl),imageAlt,featured,order},
       "experience": *[_type == "experience"] | order(order asc){"id":_id,company,role,period,summary,order},
       "education": *[_type == "education"] | order(order asc){"id":_id,institution,qualification,period,detail,order}
     }`,

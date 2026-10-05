@@ -12,7 +12,7 @@ export function WorkCard({
     <article className="work-card">
       {work.image && (
         <a
-          className={`work-media ${work.style}`}
+          className="work-media"
           href={work.url}
           target="_blank"
           rel="noreferrer"

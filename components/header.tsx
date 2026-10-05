@@ -7,7 +7,7 @@ import { Menu, X, Sun, Moon, ArrowUpRight } from 'lucide-react';
 import { useState } from 'react';
 
 const links = [
-  { href: '/work', label: 'Work' },
+  { href: '/work', label: 'Projects' },
   { href: '/lab', label: 'AI & ML Lab' },
   { href: '/about', label: 'About' },
 ];
